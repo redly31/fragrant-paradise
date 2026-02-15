@@ -1,8 +1,13 @@
 import { Button } from "@/shared/components/ui/button"
 import Link from "next/link"
 import { UserRound } from "lucide-react"
+import { createClient } from "@/shared/supabase/server"
 
-export default function Header() {
+export default async function Header() {
+  const supabase = await createClient()
+  const {
+    data: { user },
+  } = await supabase.auth.getUser()
   return (
     <header className="h-16 flex justify-between items-center">
       <h1 className="font-bold">frangrant paradise</h1>
