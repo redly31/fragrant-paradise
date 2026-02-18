@@ -22,64 +22,6 @@ export interface Perfume {
   image: string
 }
 
-const mockPerfumes: Perfume[] = [
-  {
-    id: "1",
-    name: "Chanel No. 5",
-    volume: "100ml",
-    price: 150,
-    discountPrice: 120,
-    subtitle: "Timeless floral fragrance",
-    image:
-      "https://damcdn.samokat.ru/dam-storage-ext-env-prod/2026/01/7d934485-cf8d-4726-a60b-0943f3cb2eef",
-  },
-  {
-    id: "2",
-    name: "Dior Sauvage",
-    volume: "100ml",
-    price: 130,
-    subtitle: "Fresh and woody notes",
-    image:
-      "https://damcdn.samokat.ru/dam-storage-ext-env-prod/2026/01/7d934485-cf8d-4726-a60b-0943f3cb2eef",
-  },
-  {
-    id: "3",
-    name: "Gucci Bloom",
-    volume: "50ml",
-    price: 90,
-    discountPrice: 75,
-    image:
-      "https://damcdn.samokat.ru/dam-storage-ext-env-prod/2026/01/7d934485-cf8d-4726-a60b-0943f3cb2eef",
-  },
-  {
-    id: "4",
-    name: "Tom Ford Oud Wood",
-    volume: "100ml",
-    price: 250,
-    subtitle: "Exotic oriental scent",
-    image:
-      "https://damcdn.samokat.ru/dam-storage-ext-env-prod/2026/01/7d934485-cf8d-4726-a60b-0943f3cb2eef",
-  },
-  {
-    id: "5",
-    name: "Yves Saint Laurent Black Opium",
-    volume: "90ml",
-    price: 140,
-    discountPrice: 110,
-    image:
-      "https://damcdn.samokat.ru/dam-storage-ext-env-prod/2026/01/7d934485-cf8d-4726-a60b-0943f3cb2eef",
-  },
-  {
-    id: "6",
-    name: "Creed Aventus",
-    volume: "100ml",
-    price: 300,
-    subtitle: "Fruity and smoky",
-    image:
-      "https://damcdn.samokat.ru/dam-storage-ext-env-prod/2026/01/7d934485-cf8d-4726-a60b-0943f3cb2eef",
-  },
-]
-
 type SortOption = "price-asc" | "price-desc" | "popularity" | "name-asc"
 
 type PerfumesListProps = {

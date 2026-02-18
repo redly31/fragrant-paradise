@@ -1,9 +1,8 @@
-import { Button } from "@/shared/components/ui/button"
 import { Product } from "@/shared/model/product"
-import { ShoppingCart } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import { FavoriteButton } from "../favorites/favorites-button"
+import { AddToCartButton } from "../cart/add-to-cart-button"
 
 type PerfumeItemProps = {
   perfume: Product
@@ -36,9 +35,7 @@ export default function PerfumeItem(props: PerfumeItemProps) {
       </div>
       <div className="flex space-x-2 mt-auto">
         <FavoriteButton product={perfume} />
-        <Button variant="outline" size="icon">
-          <ShoppingCart className="h-4 w-4" />
-        </Button>
+        <AddToCartButton product={perfume} />
       </div>
     </div>
   )

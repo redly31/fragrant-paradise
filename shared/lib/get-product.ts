@@ -17,6 +17,11 @@ export async function getProduct(handle: string): Promise<Product | null> {
             currencyCode
           }
         }
+        variants(first: 1) {
+          nodes {
+            id
+          }
+        }
         featuredImage {
           url
           altText
@@ -36,5 +41,12 @@ export async function getProduct(handle: string): Promise<Product | null> {
     variables: { handle },
   })
 
-  return response.data.product
+  const product = response.data.product
+
+  if (!product) return null
+
+  return {
+    ...product,
+    variantId: product.variants.nodes[0]?.id,
+  }
 }

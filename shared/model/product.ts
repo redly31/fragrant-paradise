@@ -1,4 +1,5 @@
 export type Product = {
+  variantId: string
   availableForSale: boolean
   description: string
   featuredImage: {
