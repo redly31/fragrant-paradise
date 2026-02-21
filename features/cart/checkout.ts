@@ -15,7 +15,6 @@ export async function startShopifyCheckout() {
     throw new Error("Корзина пуста или произошла ошибка")
   }
 
-  console.log("123", cartItems)
   const invalidItems = cartItems.filter((item) => !item.variant_id)
   if (invalidItems.length > 0) {
     console.error("❌ В корзине товары без variant_id:", invalidItems)

@@ -6,14 +6,14 @@ import { Product } from "@/shared/model/product"
 import { ShoppingCart, Loader2 } from "lucide-react"
 import { addToCart } from "./actions"
 
-export function AddToCartButton({ product }: { product: Product }) {
+export function AddToCartButton({ item }: { item: Product }) {
   const [isLoading, setIsLoading] = useState(false)
 
   const handleAdd = async () => {
     setIsLoading(true)
     try {
-      console.log(product)
-      await addToCart(product.id, product.variantId)
+      console.log(item)
+      await addToCart(item.id, item.variantId)
     } finally {
       setIsLoading(false)
     }

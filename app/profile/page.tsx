@@ -18,6 +18,7 @@ export default async function ProfilePage() {
   if (!user) {
     redirect("/auth")
   }
+
   return (
     <div className="space-y-8">
       <Card>

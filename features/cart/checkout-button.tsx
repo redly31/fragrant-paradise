@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { Button } from "@/shared/components/ui/button"
-import { Loader2, CircleDollarSign } from "lucide-react"
+import { Loader2 } from "lucide-react"
 import { startShopifyCheckout } from "./checkout"
 
 export function CheckoutButton() {

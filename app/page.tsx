@@ -1,4 +1,4 @@
-import PerfumesList from "@/features/perfumes-list/perfumes-list"
+import PerfumesListCatalog from "@/features/perfumes-list/perfumes-list-catalog"
 import { getProducts } from "@/shared/lib/get-products"
 
 export interface Perfume {
@@ -17,6 +17,5 @@ export default async function Catalog() {
   if (perfumes.length === 0) {
     return <h1>Загрузка...</h1>
   }
-  console.log(perfumes)
-  return <PerfumesList perfumes={perfumes} />
+  return <PerfumesListCatalog perfumes={perfumes} />
 }

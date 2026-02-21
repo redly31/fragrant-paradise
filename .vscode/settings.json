@@ -1,0 +1,26 @@
+{
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true,
+    "tsconfig.json": true,
+    "pnpm-workspace.yaml": true,
+    "postcss.config.mjs": true,
+    "README.md": true,
+    "next.config.ts": true,
+    "next-env.d.ts": true,
+    "eslint.config.mjs": true,
+    "components.json": true,
+    "pnpm-lock.yaml": true,
+    ".gitignore": true,
+    "public": true,
+    "node_modules": true,
+    ".vscode": true,
+    ".next": true,
+    "app/favicon.ico": true,
+    "features/perfumes-list": false
+  },
+  "explorerExclude.backup": {}
+}

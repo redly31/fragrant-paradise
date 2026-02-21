@@ -22,3 +22,7 @@ export type Product = {
   title: string
   vendor: string
 }
+
+export interface CartProduct extends Product {
+  quantity: number
+}

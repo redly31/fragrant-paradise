@@ -1,32 +1,33 @@
 import { Button } from "@/shared/components/ui/button"
 import Link from "next/link"
 import { UserRound } from "lucide-react"
-import { createClient } from "@/shared/supabase/server"
+import { NavLinks } from "./nav-links"
 
-export default async function Header() {
-  const supabase = await createClient()
-  const {
-    data: { user },
-  } = await supabase.auth.getUser()
+export default function Header() {
   return (
-    <header className="h-16 flex justify-between items-center">
-      <h1 className="font-bold">frangrant paradise</h1>
-      <nav className="flex items-center">
-        <Button asChild variant={"link"}>
-          <Link href="/">Каталог</Link>
-        </Button>
-        <Button asChild variant={"link"}>
-          <Link href="/cart">Корзина</Link>
-        </Button>
-        <Button asChild variant={"link"}>
-          <Link href="/favorites">Избранное</Link>
-        </Button>
-        <Button asChild variant={"outline"}>
-          <Link href="/profile">
-            <UserRound />
-          </Link>
-        </Button>
-      </nav>
+    <header className="mb-4 sticky top-0 z-50 w-full bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/60">
+      <div className="mx-auto h-16 flex justify-between items-center px-4 w-5xl">
+        <Link href="/" className="hover:opacity-80 transition-opacity">
+          <h1 className="font-bold text-xl tracking-tight">
+            fragrant <span className="text-primary">paradise</span>
+          </h1>
+        </Link>
+
+        <div className="flex items-center gap-6">
+          <NavLinks />
+
+          <Button
+            asChild
+            variant="outline"
+            size="icon"
+            className="rounded-full"
+          >
+            <Link href="/profile">
+              <UserRound className="h-5 w-5" />
+            </Link>
+          </Button>
+        </div>
+      </div>
     </header>
   )
 }

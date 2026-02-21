@@ -1,7 +1,7 @@
-// app/cart/page.tsx
 import { createClient } from "@/shared/supabase/server"
 import { getProductsByIds } from "@/shared/lib/get-products-by-id"
 import CartItemsList from "@/features/cart/cart-items-list"
+import PerfumesListCart from "@/features/perfumes-list/perfumes-list-cart"
 
 export default async function CartPage() {
   const supabase = await createClient()
@@ -26,9 +26,8 @@ export default async function CartPage() {
     .filter((item) => item.id)
 
   return (
-    <main className="container mx-auto py-10">
-      <h1 className="text-3xl font-bold mb-8">Ваша корзина</h1>
-      <CartItemsList initialItems={cartItems} />
-    </main>
+    <div className="">
+      <PerfumesListCart perfumes={cartItems} />
+    </div>
   )
 }
