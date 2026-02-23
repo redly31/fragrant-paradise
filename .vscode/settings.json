@@ -6,7 +6,7 @@
     "**/.DS_Store": true,
     "**/Thumbs.db": true,
     "tsconfig.json": true,
-    "pnpm-workspace.yaml": true,
+    "pnpm-workspace.yaml": false,
     "postcss.config.mjs": true,
     "README.md": true,
     "next.config.ts": true,

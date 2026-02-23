@@ -6,7 +6,7 @@ export default function Logout() {
   return (
     <form action={signOut}>
       <Button>
-        Sign out <LogOut />
+        Выйти <LogOut />
       </Button>
     </form>
   )

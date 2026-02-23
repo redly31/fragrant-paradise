@@ -1,6 +1,5 @@
 import { createClient } from "@/shared/supabase/server"
 import { getProductsByIds } from "@/shared/lib/get-products-by-id"
-import CartItemsList from "@/features/cart/cart-items-list"
 import PerfumesListCart from "@/features/perfumes-list/perfumes-list-cart"
 
 export default async function CartPage() {

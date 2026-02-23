@@ -32,10 +32,5 @@ export async function shopifyFetch({
   }
 
   const json = await res.json()
-  // ←←←← ОТЛАДКА: всегда логируем!
-  // console.log("🔍 Shopify Full Response:", JSON.stringify(json, null, 2))
-  // console.log("📊 Status:", res.status, "OK:", res.ok)
-  // ←←←←
-
   return json
 }

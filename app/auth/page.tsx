@@ -1,9 +1,5 @@
-import LoginWithGoogle from "@/features/auth/login-with-google"
+import LoginWithGoogleButton from "@/features/auth/login-with-google-button"
 
-export default function Auth() {
-  return (
-    <div>
-      <LoginWithGoogle />
-    </div>
-  )
-}
+const Auth = () => <LoginWithGoogleButton />
+
+export default Auth
