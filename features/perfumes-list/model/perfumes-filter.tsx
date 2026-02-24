@@ -24,7 +24,7 @@ export function PerfumesFilters({
   setSortOption,
 }: PerfumesFiltersProps) {
   return (
-    <div className="block justify-between sm:flex">
+    <div className="flex justify-between gap-1">
       <Input
         placeholder="Поиск..."
         value={searchQuery}

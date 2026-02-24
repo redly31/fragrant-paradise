@@ -13,16 +13,11 @@ import { ReactNode } from "react"
 type PerfumeItemProps = {
   perfume: Product
   children?: ReactNode
-  description: boolean
 }
 
-export default function PerfumeItem({
-  perfume,
-  children,
-  description,
-}: PerfumeItemProps) {
+export default function PerfumeItem({ perfume, children }: PerfumeItemProps) {
   return (
-    <Card className="flex justify-between flex-col">
+    <Card className="flex justify-between flex-col p-2 sm:p-4 gap-2">
       <CardHeader>
         <Link href={`${perfume.handle}`}>
           <Image
@@ -35,18 +30,14 @@ export default function PerfumeItem({
           />
         </Link>
       </CardHeader>
-      <CardContent className="flex flex-col items-center text-center">
+      <CardContent className="flex flex-col items-center text-center p-0 sm:p-4">
         <CardTitle className="text-lg line-clamp-2">
           {perfume.vendor} {perfume.title}
         </CardTitle>
 
-        {description && (
-          <p className="text-sm text-muted-foreground mt-2 line-clamp-2">
-            {perfume.description}
-          </p>
-        )}
-        <span className="text-lg mt-4">
-          ${perfume.priceRange.minVariantPrice.amount}
+        <span className="text-lg mt-2">
+          {perfume.priceRange.minVariantPrice.amount}{" "}
+          {perfume.priceRange.minVariantPrice.currencyCode}
         </span>
       </CardContent>
       {children && (

@@ -1,11 +1,25 @@
 "use client"
 
+import { Button } from "@/shared/components/ui/button"
 import { AddToCartButton } from "../cart"
 import { AddToFavoriteButton, useFavorites } from "../favorites"
 import PerfumesList from "./ui/perfumes-list"
+import Link from "next/link"
 
 export function PerfumesListFavorites() {
   const { favorites } = useFavorites()
+  if (favorites.length === 0)
+    return (
+      <>
+        <div className="text-2xl font-bold">
+          Вы не добавили товары в избранное :(
+        </div>
+        <Button asChild className="mt-4">
+          <Link href={"/"}>На главную</Link>
+        </Button>
+      </>
+    )
+
   return (
     <div>
       <PerfumesList

@@ -6,16 +6,15 @@ import { NavLinks } from "./nav-links"
 export function Header() {
   return (
     <header className="mb-4 sticky top-0 z-50 w-full bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/60">
-      <div className="mx-auto h-16 flex justify-between items-center px-4 w-5xl">
+      <div className="mx-auto h-16 flex justify-between items-center px-4 max-w-5xl">
         <Link href="/" className="hover:opacity-80 transition-opacity">
           <h1 className="font-bold text-xl tracking-tight">
             fragrant <span className="text-primary">paradise</span>
           </h1>
         </Link>
 
-        <div className="flex items-center gap-6">
+        <div className="flex items-center gap-2 md:gap-6">
           <NavLinks />
-
           <Button
             asChild
             variant="outline"
