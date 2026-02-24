@@ -1,4 +1,5 @@
 import { Product } from "../model/product"
+import { mapToProduct } from "./map-to-product"
 import { shopifyFetch } from "./shopify"
 
 export async function getProductsByIds(ids: string[]): Promise<Product[]> {
@@ -38,15 +39,12 @@ export async function getProductsByIds(ids: string[]): Promise<Product[]> {
     }
   `
 
-  const response = await shopifyFetch({
+  const response = await shopifyFetch<{ nodes: (ShopifyRawProduct | null)[] }>({
     query,
     variables: { ids },
   })
 
   return response.data.nodes
-    .filter((node: any) => node !== null)
-    .map((node: any) => ({
-      ...node,
-      variantId: node.variants.nodes[0]?.id,
-    }))
+    .filter((node): node is ShopifyRawProduct => node !== null)
+    .map(mapToProduct)
 }

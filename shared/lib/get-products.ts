@@ -1,3 +1,4 @@
+import { mapToProduct } from "./map-to-product"
 import { shopifyFetch } from "./shopify"
 
 export async function getProducts() {
@@ -40,9 +41,9 @@ export async function getProducts() {
   } 
 `
 
-  const response = await shopifyFetch({ query })
-  return response.data.products.edges.map((edge: any) => ({
-    ...edge.node,
-    variantId: edge.node.variants.edges[0]?.node?.id,
-  }))
+  const response = await shopifyFetch<{
+    products: { edges: Array<{ node: ShopifyRawProduct }> }
+  }>({ query })
+
+  return response.data.products.edges.map((edge) => mapToProduct(edge.node))
 }

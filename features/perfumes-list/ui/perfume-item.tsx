@@ -24,15 +24,14 @@ export default function PerfumeItem({
   return (
     <Card className="flex justify-between flex-col">
       <CardHeader>
-        <Link
-          href={`${perfume.handle}`}
-          className="relative w-full h-72 block overflow-hidden"
-        >
+        <Link href={`${perfume.handle}`}>
           <Image
             src={perfume.featuredImage.url}
             alt={perfume.title}
-            fill
-            className="object-cover transition-transform hover:scale-105 duration-300"
+            width={230}
+            height={480}
+            className="w-full h-full object-cover transition-transform hover:scale-105 duration-300"
+            loading="eager"
           />
         </Link>
       </CardHeader>

@@ -10,7 +10,7 @@ type GenericListProps<T extends Product> = {
   renderFooter?: (item: T) => React.ReactNode
 }
 
-export default function GenericList<T extends Product>(
+export default function PerfumesList<T extends Product>(
   props: GenericListProps<T>,
 ) {
   const { items, title, renderFooter } = props

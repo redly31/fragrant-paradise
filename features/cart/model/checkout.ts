@@ -59,17 +59,6 @@ export async function startShopifyCheckout() {
     throw new Error(response.errors[0].message)
   }
 
-  const userErrors = response.data?.cartCreate?.userErrors
-  if (userErrors && userErrors.length > 0) {
-    console.error("Shopify Checkout Error:", userErrors)
-    throw new Error(userErrors[0].message)
-  }
-
-  if (userErrors?.length > 0) {
-    console.error("❌ User Errors:", userErrors)
-    throw new Error(userErrors[0].message)
-  }
-
   const checkoutUrl = response.data?.cartCreate?.cart?.checkoutUrl
 
   if (!checkoutUrl) {
