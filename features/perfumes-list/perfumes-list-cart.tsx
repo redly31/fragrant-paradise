@@ -1,13 +1,15 @@
 "use client"
 
 import PerfumesList from "./ui/perfumes-list"
-import RemoveFromCartButton from "../cart/remove-from-cart-button"
-import UpdateQuantityButtons from "../cart/update-quantity-buttons"
-import useCart from "../cart/useCart"
 import { CartProduct } from "@/shared/model/product"
-import { CheckoutButton } from "../cart/checkout-button"
+import {
+  useCart,
+  RemoveFromCartButton,
+  UpdateQuantityButtons,
+  CheckoutButton,
+} from "../cart"
 
-export default function PerfumesListCart({
+export function PerfumesListCart({
   perfumes,
 }: {
   perfumes: CartProduct[]

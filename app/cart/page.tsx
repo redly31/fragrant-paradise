@@ -1,6 +1,6 @@
 import { createClient } from "@/shared/supabase/server"
 import { getProductsByIds } from "@/shared/lib/get-products-by-id"
-import PerfumesListCart from "@/features/perfumes-list/perfumes-list-cart"
+import { PerfumesListCart } from "@/features/perfumes-list"
 
 export default async function CartPage() {
   const supabase = await createClient()

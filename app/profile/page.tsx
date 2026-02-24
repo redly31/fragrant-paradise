@@ -7,7 +7,7 @@ import {
 import { Calendar } from "lucide-react"
 import { createClient } from "@/shared/supabase/server"
 import { redirect } from "next/navigation"
-import Logout from "@/features/auth/logout"
+import { LogoutButton } from "@/features/auth"
 
 export default async function ProfilePage() {
   const supabase = await createClient()
@@ -52,7 +52,7 @@ export default async function ProfilePage() {
           </div>
         </CardContent>
       </Card>
-      <Logout />
+      <LogoutButton />
     </div>
   )
 }

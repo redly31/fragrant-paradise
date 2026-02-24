@@ -2,7 +2,7 @@ import { Button } from "@/shared/components/ui/button"
 import { signInWithGoogle } from "./actions"
 import { LogIn } from "lucide-react"
 
-export default function LoginWithGoogleButton() {
+export function LoginWithGoogleButton() {
   return (
     <form action={signInWithGoogle}>
       <Button>

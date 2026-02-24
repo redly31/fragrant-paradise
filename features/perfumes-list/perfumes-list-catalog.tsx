@@ -1,17 +1,13 @@
 "use client"
 
 import { Product } from "@/shared/model/product"
-import { AddToCartButton } from "../cart/add-to-cart-button"
-import { AddToFavoriteButton } from "../favorites/add-to-favorite-button"
 import PerfumesList from "./ui/perfumes-list"
 import { PerfumesFilters } from "./model/perfumes-filter"
 import { useFilters } from "./model/use-filters"
+import { AddToFavoriteButton } from "../favorites"
+import { AddToCartButton } from "../cart"
 
-export default function PerfumesListCatalog({
-  perfumes,
-}: {
-  perfumes: Product[]
-}) {
+export function PerfumesListCatalog({ perfumes }: { perfumes: Product[] }) {
   const { searchQuery, setSearchQuery, setSortOption, displayedPerfumes } =
     useFilters(perfumes)
 

@@ -4,7 +4,7 @@ import { useState } from "react"
 import { removeFromCart, updateCartQuantity } from "./actions"
 import { CartProduct } from "@/shared/model/product"
 
-export default function useCart(perfumes: CartProduct[]) {
+export function useCart(perfumes: CartProduct[]) {
   const [items, setItems] = useState<CartProduct[]>(perfumes)
   const handleUpdateQuantity = async (id: string, delta: number) => {
     const item = items.find((i) => i.id === id)

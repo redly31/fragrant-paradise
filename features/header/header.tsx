@@ -3,7 +3,7 @@ import Link from "next/link"
 import { UserRound } from "lucide-react"
 import { NavLinks } from "./nav-links"
 
-export default function Header() {
+export function Header() {
   return (
     <header className="mb-4 sticky top-0 z-50 w-full bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/60">
       <div className="mx-auto h-16 flex justify-between items-center px-4 w-5xl">

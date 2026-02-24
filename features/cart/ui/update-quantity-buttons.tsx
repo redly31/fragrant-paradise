@@ -8,9 +8,7 @@ type UpdateQuantityButtonsProps = {
   handleUpdateQuantity: (id: string, delta: number) => Promise<void>
 }
 
-export default function UpdateQuantityButtons(
-  props: UpdateQuantityButtonsProps,
-) {
+export function UpdateQuantityButtons(props: UpdateQuantityButtonsProps) {
   const { item, handleUpdateQuantity } = props
   return (
     <div className="flex gap-2">

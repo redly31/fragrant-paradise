@@ -1,4 +1,4 @@
-import PerfumesListCatalog from "@/features/perfumes-list/perfumes-list-catalog"
+import { PerfumesListCatalog } from "@/features/perfumes-list"
 import { getProducts } from "@/shared/lib/get-products"
 
 export interface Perfume {

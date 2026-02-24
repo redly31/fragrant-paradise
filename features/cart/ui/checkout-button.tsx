@@ -3,7 +3,7 @@
 import { useState } from "react"
 import { Button } from "@/shared/components/ui/button"
 import { Loader2 } from "lucide-react"
-import { startShopifyCheckout } from "./checkout"
+import { startShopifyCheckout } from "../model/checkout"
 
 export function CheckoutButton() {
   const [isLoading, setIsLoading] = useState(false)

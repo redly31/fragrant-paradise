@@ -1,11 +1,10 @@
 "use client"
 
-import { AddToCartButton } from "../cart/add-to-cart-button"
-import { AddToFavoriteButton } from "../favorites/add-to-favorite-button"
+import { AddToCartButton } from "../cart"
+import { AddToFavoriteButton, useFavorites } from "../favorites"
 import PerfumesList from "./ui/perfumes-list"
-import { useFavorites } from "../favorites/useFavorites"
 
-export default function PerfumesListFavorites() {
+export function PerfumesListFavorites() {
   const { favorites } = useFavorites()
   return (
     <div>

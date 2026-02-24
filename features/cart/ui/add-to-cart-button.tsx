@@ -4,7 +4,7 @@ import { useState } from "react"
 import { Button } from "@/shared/components/ui/button"
 import { Product } from "@/shared/model/product"
 import { ShoppingCart, Loader2 } from "lucide-react"
-import { addToCart } from "./actions"
+import { addToCart } from "../model/actions"
 
 export function AddToCartButton({ item }: { item: Product }) {
   const [isLoading, setIsLoading] = useState(false)

@@ -1,4 +1,4 @@
-import LoginWithGoogleButton from "@/features/auth/login-with-google-button"
+import { LoginWithGoogleButton } from "@/features/auth"
 
 const Auth = () => <LoginWithGoogleButton />
 

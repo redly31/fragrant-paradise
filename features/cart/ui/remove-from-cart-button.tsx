@@ -7,7 +7,7 @@ type RemoveFromCartButtonProps = {
   handleRemove: (id: string) => Promise<void>
 }
 
-export default function RemoveFromCartButton(props: RemoveFromCartButtonProps) {
+export function RemoveFromCartButton(props: RemoveFromCartButtonProps) {
   const { handleRemove, item } = props
   return (
     <Button
