@@ -1,6 +1,7 @@
 import { Product } from "../model/product"
 import { mapToProduct } from "./map-to-product"
 import { shopifyFetch } from "./shopify"
+import { ShopifyRawProduct } from "./types"
 
 export async function getProduct(handle: string): Promise<Product | null> {
   const query = `

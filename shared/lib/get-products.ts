@@ -1,5 +1,6 @@
 import { mapToProduct } from "./map-to-product"
 import { shopifyFetch } from "./shopify"
+import { ShopifyRawProduct } from "./types"
 
 export async function getProducts() {
   const query = `

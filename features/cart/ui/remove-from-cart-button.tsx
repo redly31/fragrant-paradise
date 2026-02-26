@@ -11,7 +11,7 @@ export function RemoveFromCartButton(props: RemoveFromCartButtonProps) {
   const { handleRemove, item } = props
   return (
     <Button
-      variant="ghost"
+      variant="outline"
       size="icon"
       className="ml-2 text-red-500 hover:text-red-700 hover:bg-red-50"
       onClick={() => handleRemove(item.id)}

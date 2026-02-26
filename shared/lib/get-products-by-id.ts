@@ -1,6 +1,7 @@
 import { Product } from "../model/product"
 import { mapToProduct } from "./map-to-product"
 import { shopifyFetch } from "./shopify"
+import { ShopifyRawProduct } from "./types"
 
 export async function getProductsByIds(ids: string[]): Promise<Product[]> {
   if (ids.length === 0) return []

@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { removeFromCart, updateCartQuantity } from "./actions"
+import { removeFromCart, updateCartQuantity } from "./cart-actions"
 import { CartProduct } from "@/shared/model/product"
 
 export function useCart(perfumes: CartProduct[]) {
@@ -19,7 +19,6 @@ export function useCart(perfumes: CartProduct[]) {
       await updateCartQuantity(id, newQty)
     } catch (err) {
       setItems(perfumes)
-      alert("Не удалось обновить количество")
     }
   }
 
@@ -31,7 +30,6 @@ export function useCart(perfumes: CartProduct[]) {
       await removeFromCart(id)
     } catch (err) {
       setItems(previousItems)
-      alert("Не удалось удалить товар")
     }
   }
 
@@ -40,5 +38,10 @@ export function useCart(perfumes: CartProduct[]) {
     0,
   )
 
-  return { items, total, handleRemove, handleUpdateQuantity }
+  return {
+    items,
+    total,
+    handleRemove,
+    handleUpdateQuantity,
+  }
 }

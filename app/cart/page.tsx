@@ -32,6 +32,5 @@ export default async function CartPage() {
       }
     })
     .filter((item) => item.id)
-
   return <PerfumesListCart perfumes={cartItems} />
 }

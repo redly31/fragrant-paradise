@@ -9,11 +9,7 @@ import {
   CheckoutButton,
 } from "../cart"
 
-export function PerfumesListCart({
-  perfumes,
-}: {
-  perfumes: CartProduct[]
-}) {
+export function PerfumesListCart({ perfumes }: { perfumes: CartProduct[] }) {
   const { handleRemove, handleUpdateQuantity, items, total } = useCart(perfumes)
   return (
     <div>

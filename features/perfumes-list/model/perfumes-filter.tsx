@@ -32,7 +32,7 @@ export function PerfumesFilters({
         className="mb-4 max-w-75"
       />
       <div className="space-x-2 mb-6">
-        <DropdownMenu>
+        <DropdownMenu modal={false}>
           <DropdownMenuTrigger asChild>
             <Button variant="outline" size="icon" suppressHydrationWarning>
               <ArrowUpDown className="h-4 w-4" />

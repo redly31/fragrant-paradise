@@ -1,4 +1,5 @@
 import { Product } from "../model/product"
+import { ShopifyRawProduct } from "./types"
 
 export function mapToProduct(raw: ShopifyRawProduct): Product {
   return {

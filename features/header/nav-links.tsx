@@ -55,7 +55,7 @@ export function NavLinks() {
       </nav>
 
       <div className="md:hidden">
-        <DropdownMenu>
+        <DropdownMenu modal={false}>
           <DropdownMenuTrigger asChild>
             <Button variant="outline" size="icon" className="relative">
               <Menu className="h-5 w-5" />

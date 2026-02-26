@@ -9,7 +9,7 @@ export function AddToFavoriteButton({ item }: { item: Product }) {
   const active = isFavorite(item.id)
 
   return (
-    <Button variant="outline" onClick={() => toggleFavorite(item)}>
+    <Button size={"lg"} variant="outline" onClick={() => toggleFavorite(item)}>
       {active ? (
         <Heart color="red" fill="red" className="h-4 w-4" />
       ) : (

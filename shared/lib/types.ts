@@ -1,5 +1,5 @@
 // Тип того, что ПРИХОДИТ из Shopify API
-interface ShopifyRawProduct {
+export interface ShopifyRawProduct {
   id: string
   title: string
   handle: string

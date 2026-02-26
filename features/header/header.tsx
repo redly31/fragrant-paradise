@@ -2,6 +2,7 @@ import { Button } from "@/shared/components/ui/button"
 import Link from "next/link"
 import { UserRound } from "lucide-react"
 import { NavLinks } from "./nav-links"
+import { ThemeToggle } from "./theme-toggle"
 
 export function Header() {
   return (
@@ -13,18 +14,21 @@ export function Header() {
           </h1>
         </Link>
 
-        <div className="flex items-center gap-2 md:gap-6">
+        <div className="flex items-center gap-2 md:gap-8">
           <NavLinks />
-          <Button
-            asChild
-            variant="outline"
-            size="icon"
-            className="rounded-full"
-          >
-            <Link href="/profile">
-              <UserRound className="h-5 w-5" />
-            </Link>
-          </Button>
+          <div className="flex gap-2">
+            <ThemeToggle />
+            <Button
+              asChild
+              variant="outline"
+              size="icon"
+              className="rounded-full"
+            >
+              <Link href="/profile">
+                <UserRound className="h-5 w-5" />
+              </Link>
+            </Button>
+          </div>
         </div>
       </div>
     </header>

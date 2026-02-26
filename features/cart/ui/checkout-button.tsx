@@ -1,31 +1,28 @@
 "use client"
 
-import { useState } from "react"
 import { Button } from "@/shared/components/ui/button"
 import { Loader2 } from "lucide-react"
-import { startShopifyCheckout } from "../model/checkout"
+import { useCheckout } from "../model/use-checkout"
 
 export function CheckoutButton() {
-  const [isLoading, setIsLoading] = useState(false)
-
-  const handleAdd = async () => {
-    setIsLoading(true)
-    try {
-      await startShopifyCheckout()
-    } finally {
-      setIsLoading(false)
-    }
-  }
+  const { handleCheckout, isPending } = useCheckout()
 
   return (
     <Button
       variant="outline"
-      className="flex items-center mt-4"
-      size={"lg"}
-      onClick={handleAdd}
-      disabled={isLoading}
+      size="lg"
+      className="mt-4 w-full"
+      onClick={handleCheckout}
+      disabled={isPending}
     >
-      {isLoading ? <Loader2 className="h-4 w-4 animate-spin" /> : <>К оплате</>}
+      {isPending ? (
+        <>
+          <Loader2 className="mr-2 h-5 w-5 animate-spin" />
+          Перенаправляем на оплату...
+        </>
+      ) : (
+        "К оплате"
+      )}
     </Button>
   )
 }
