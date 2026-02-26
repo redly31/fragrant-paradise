@@ -7,12 +7,11 @@ import { revalidatePath } from "next/cache"
 
 export async function signInWithGoogle() {
   const supabase = await createClient()
-  const origin = (await headers()).get("origin")
 
   const { data, error } = await supabase.auth.signInWithOAuth({
     provider: "google",
     options: {
-      redirectTo: `${origin}/auth/callback`,
+      redirectTo: `${process.env.NEXT_PUBLIC_SITE_URL}/auth/callback`,
     },
   })
 
