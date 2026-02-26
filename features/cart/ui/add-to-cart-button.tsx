@@ -5,21 +5,26 @@ import { Button } from "@/shared/components/ui/button"
 import { Product } from "@/shared/model/product"
 import { ShoppingCart, Loader2 } from "lucide-react"
 import { addToCart } from "../model/cart-actions"
+import { toast } from "sonner"
 
 export function AddToCartButton({ item }: { item: Product }) {
   const [isLoading, setIsLoading] = useState(false)
 
   const handleAdd = async () => {
     setIsLoading(true)
-    try {
-      await addToCart(item.id, item.variantId)
-    } finally {
-      setIsLoading(false)
-    }
+
+    toast.promise(addToCart(item.id, item.variantId), {
+      loading: "Добавление...",
+      success: "Товар добавлен в корзину",
+      error: "Не удалось добавить товар",
+    })
+
+    setIsLoading(false)
   }
 
   return (
     <Button
+      aria-label={"Добавить товар в корзину"}
       size={"lg"}
       variant="outline"
       onClick={handleAdd}

@@ -11,6 +11,7 @@ export function RemoveFromCartButton(props: RemoveFromCartButtonProps) {
   const { handleRemove, item } = props
   return (
     <Button
+      aria-label={"Убрать товар из корзины"}
       variant="outline"
       size="icon"
       className="ml-2 text-red-500 hover:text-red-700 hover:bg-red-50"

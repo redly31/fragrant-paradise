@@ -2,7 +2,7 @@
 
 import { Product } from "@/shared/model/product"
 import PerfumesList from "./ui/perfumes-list"
-import { PerfumesFilters } from "./model/perfumes-filter"
+import { PerfumesFilters } from "./ui/perfumes-filter"
 import { useFilters } from "./model/use-filters"
 import { AddToFavoriteButton } from "../favorites"
 import { AddToCartButton } from "../cart"

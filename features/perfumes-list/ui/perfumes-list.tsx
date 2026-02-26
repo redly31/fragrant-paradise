@@ -4,12 +4,26 @@ import React, { useState, useMemo } from "react"
 import { useInView } from "react-intersection-observer"
 import { Product } from "@/shared/model/product"
 import PerfumeItem from "./perfume-item"
+import { motion, Variants, AnimatePresence } from "framer-motion"
 
 type GenericListProps<T extends Product> = {
   items: T[]
   title: string
   renderFooter?: (item: T) => React.ReactNode
   pageSize?: number
+}
+
+const itemVariants: Variants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: (i % 12) * 0.1,
+      duration: 0.4,
+      ease: "easeOut",
+    },
+  }),
 }
 
 export default function PerfumesList<T extends Product>({
@@ -41,11 +55,32 @@ export default function PerfumesList<T extends Product>({
       <h1 className="text-3xl font-bold mb-6">{title}</h1>
 
       <div className="grid grid-cols-1 min-[450px]:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-        {visibleItems.map((item) => (
-          <PerfumeItem perfume={item} key={item.id}>
-            {renderFooter?.(item)}
-          </PerfumeItem>
-        ))}
+        <AnimatePresence mode="popLayout">
+          {visibleItems.map((item, index) => (
+            <motion.div
+              key={item.id}
+              custom={index}
+              variants={itemVariants}
+              initial="hidden"
+              animate="visible"
+              layout
+              whileHover={{
+                scale: 0.99,
+                transition: { duration: 0.2 },
+              }}
+              whileTap={{
+                scale: 1.01,
+              }}
+              transition={{
+                type: "spring",
+                stiffness: 300,
+                damping: 20,
+              }}
+            >
+              <PerfumeItem perfume={item}>{renderFooter?.(item)}</PerfumeItem>
+            </motion.div>
+          ))}
+        </AnimatePresence>
       </div>
 
       {displayCount < items.length && (

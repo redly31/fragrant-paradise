@@ -24,7 +24,7 @@ export function Header() {
               size="icon"
               className="rounded-full"
             >
-              <Link href="/profile">
+              <Link href="/profile" aria-label="Перейти в личный кабинет">
                 <UserRound className="h-5 w-5" />
               </Link>
             </Button>

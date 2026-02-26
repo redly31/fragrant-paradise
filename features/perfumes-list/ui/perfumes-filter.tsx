@@ -34,7 +34,12 @@ export function PerfumesFilters({
       <div className="space-x-2 mb-6">
         <DropdownMenu modal={false}>
           <DropdownMenuTrigger asChild>
-            <Button variant="outline" size="icon" suppressHydrationWarning>
+            <Button
+              variant="outline"
+              size="icon"
+              aria-label={"Сортировка товаров"}
+              suppressHydrationWarning
+            >
               <ArrowUpDown className="h-4 w-4" />
             </Button>
           </DropdownMenuTrigger>

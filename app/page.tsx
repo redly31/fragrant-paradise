@@ -1,16 +1,6 @@
 import { PerfumesListCatalog } from "@/features/perfumes-list"
 import { getProducts } from "@/shared/lib/get-products"
 
-export interface Perfume {
-  id: string
-  name: string
-  volume: string
-  price: number
-  discountPrice?: number
-  subtitle?: string
-  image: string
-}
-
 export default async function Catalog() {
   const products = await getProducts()
   const perfumes = products

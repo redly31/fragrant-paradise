@@ -13,6 +13,7 @@ export function UpdateQuantityButtons(props: UpdateQuantityButtonsProps) {
   return (
     <div className="flex gap-2">
       <Button
+        aria-label={"Уменьшить количество товара на 1"}
         variant="outline"
         size="icon"
         onClick={() => handleUpdateQuantity(item.id, -1)}
@@ -24,6 +25,7 @@ export function UpdateQuantityButtons(props: UpdateQuantityButtonsProps) {
       <Input className="w-12 text-center" value={item.quantity} readOnly />
 
       <Button
+        aria-label={"Увеличить количество товара на 1"}
         variant="outline"
         size="icon"
         onClick={() => handleUpdateQuantity(item.id, 1)}

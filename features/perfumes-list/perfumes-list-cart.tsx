@@ -8,6 +8,12 @@ import {
   UpdateQuantityButtons,
   CheckoutButton,
 } from "../cart"
+import {
+  Alert,
+  AlertTitle,
+  AlertDescription,
+} from "@/shared/components/ui/alert"
+import { AlertCircle } from "lucide-react"
 
 export function PerfumesListCart({ perfumes }: { perfumes: CartProduct[] }) {
   const { handleRemove, handleUpdateQuantity, items, total } = useCart(perfumes)
@@ -27,7 +33,11 @@ export function PerfumesListCart({ perfumes }: { perfumes: CartProduct[] }) {
         )}
       />
       <div className="border rounded-lg p-6 h-fit mt-5">
-        <h2 className="text-xl font-bold mb-4">Итого</h2>
+        <Alert className="">
+          <AlertTitle>Оплата для тестирования</AlertTitle>
+          <AlertDescription>Пароль: 12345</AlertDescription>
+        </Alert>
+        <h2 className="text-xl font-bold my-4 ">Итого</h2>
         <div className="flex justify-between mb-2">
           <span>Товары ({perfumes.length})</span>
           <span>
