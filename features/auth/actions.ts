@@ -3,6 +3,7 @@
 import { redirect } from "next/navigation"
 import { headers } from "next/headers"
 import { createClient } from "@/shared/supabase/server"
+import { revalidatePath } from "next/cache"
 
 export async function signInWithGoogle() {
   const supabase = await createClient()
@@ -25,6 +26,11 @@ export async function signInWithGoogle() {
 
 export async function signOut() {
   const supabase = await createClient()
-  await supabase.auth.signOut()
+  const { error } = await supabase.auth.signOut()
+  if (error) {
+    console.error("Ошибка при выходе:", error.message)
+    return
+  }
+  revalidatePath("/", "layout")
   redirect("/")
 }

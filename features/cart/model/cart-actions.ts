@@ -1,6 +1,7 @@
 "use server"
 import { createClient } from "@/shared/supabase/server"
 import { revalidatePath } from "next/cache"
+import { redirect } from "next/navigation"
 
 export async function addToCart(productId: string, variantId: string) {
   const supabase = await createClient()
@@ -8,7 +9,7 @@ export async function addToCart(productId: string, variantId: string) {
   const {
     data: { user },
   } = await supabase.auth.getUser()
-  if (!user) throw new Error("Не авторизован")
+  if (!user) redirect("/auth")
   const { error } = await supabase.rpc("add_to_cart", {
     p_user_id: user.id,
     p_product_id: productId,

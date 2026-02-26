@@ -3,13 +3,23 @@ import { getProductsByIds } from "@/shared/lib/get-products-by-id"
 import { PerfumesListCart } from "@/features/perfumes-list"
 import { Button } from "@/shared/components/ui/button"
 import Link from "next/link"
+import { redirect } from "next/navigation"
 
 export default async function CartPage() {
   const supabase = await createClient()
 
+  const {
+    data: { user },
+  } = await supabase.auth.getUser()
+
+  if (!user) {
+    redirect("/auth")
+  }
+
   const { data: dbItems } = await supabase
     .from("cart_items")
     .select("product_id, quantity, variant_id")
+    .eq("user_id", user.id)
 
   if (!dbItems || dbItems.length === 0) {
     return (
