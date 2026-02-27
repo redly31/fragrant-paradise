@@ -72,7 +72,7 @@ export default async function PerfumePage({ params }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <div className="container mx-auto p-6">
+      <div className="">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
           {product.featuredImage && (
             <Image
@@ -84,7 +84,7 @@ export default async function PerfumePage({ params }: Props) {
               className="w-auto h-auto rounded-lg object-cover"
             />
           )}
-          <Card className="border-0 shadow-none">
+          <Card className="p-4">
             <CardHeader className="p-0">
               <CardTitle className="text-3xl">{product.title}</CardTitle>
               <CardDescription>{product.vendor}</CardDescription>

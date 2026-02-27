@@ -19,7 +19,7 @@ const itemVariants: Variants = {
     opacity: 1,
     y: 0,
     transition: {
-      delay: (i % 12) * 0.1,
+      delay: (i % 8) * 0.1,
       duration: 0.4,
       ease: "easeOut",
     },
@@ -30,7 +30,7 @@ export default function PerfumesList<T extends Product>({
   items,
   title,
   renderFooter,
-  pageSize = 12,
+  pageSize = 8,
 }: GenericListProps<T>) {
   const [displayCount, setDisplayCount] = useState(pageSize)
 
