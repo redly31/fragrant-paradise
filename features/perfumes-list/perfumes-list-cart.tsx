@@ -13,7 +13,6 @@ import {
   AlertTitle,
   AlertDescription,
 } from "@/shared/components/ui/alert"
-import { AlertCircle } from "lucide-react"
 
 export function PerfumesListCart({ perfumes }: { perfumes: CartProduct[] }) {
   const { handleRemove, handleUpdateQuantity, items, total } = useCart(perfumes)

@@ -6,19 +6,13 @@ import {
 } from "@/shared/components/ui/avatar"
 import { Calendar } from "lucide-react"
 import { createClient } from "@/shared/supabase/server"
-import { redirect } from "next/navigation"
 import { LogoutButton } from "@/features/auth"
 
 export default async function ProfilePage() {
   const supabase = await createClient()
 
-  const {
-    data: { user },
-  } = await supabase.auth.getUser()
-
-  if (!user) {
-    redirect("/auth")
-  }
+  const { data } = await supabase.auth.getUser()
+  const user = data.user!
 
   return (
     <div className="space-y-8">

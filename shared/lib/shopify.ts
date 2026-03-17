@@ -30,6 +30,9 @@ export async function shopifyFetch<T>({
       "X-Shopify-Storefront-Access-Token": accessToken,
     },
     body: JSON.stringify({ query, variables }),
+    next: {
+      revalidate: 120,
+    },
   })
 
   if (!res.ok) {

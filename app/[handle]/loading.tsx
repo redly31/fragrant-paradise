@@ -7,12 +7,12 @@ export default function ProductLoading() {
       <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
         <Skeleton className="h-137.5 w-full rounded-lg" />
         <Card className="border-0 shadow-none">
-          <CardHeader className="p-0 space-y-2">
+          <CardHeader className="p-4 space-y-2">
             <Skeleton className="h-10 w-4/5 max-w-105" />
             <Skeleton className="h-5 w-48" />
           </CardHeader>
 
-          <CardContent className="p-0 pt-6 space-y-6">
+          <CardContent className="p-4 pt-6 space-y-6">
             <Skeleton className="h-9 w-44" />
             <div className="space-y-3">
               <Skeleton className="h-5 w-full" />

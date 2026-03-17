@@ -20,7 +20,7 @@
     ".vscode": true,
     ".next": true,
     "app/favicon.ico": true,
-    "features/perfumes-list": false
+    "features/perfumes-list": true
   },
   "explorerExclude.backup": {}
 }

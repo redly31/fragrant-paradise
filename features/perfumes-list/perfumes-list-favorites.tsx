@@ -10,14 +10,15 @@ export function PerfumesListFavorites() {
   const { favorites } = useFavorites()
   if (favorites.length === 0)
     return (
-      <>
-        <div className="text-2xl font-bold">
-          Вы не добавили товары в избранное :(
+      <div className="flex justify-center flex-col items-center">
+        <div className="text-2xl font-bold text-center">
+          Вы не добавили <br />
+          товары в избранное :(
         </div>
         <Button asChild className="mt-4">
           <Link href={"/"}>На главную</Link>
         </Button>
-      </>
+      </div>
     )
 
   return (
