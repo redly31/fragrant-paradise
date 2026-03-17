@@ -3,6 +3,7 @@ import "./globals.css"
 import { Header } from "@/features/header"
 import { ThemeProvider } from "@/shared/ui/theme-provider"
 import { Toaster } from "@/shared/components/ui/sonner"
+import Footer from "@/features/header/footer"
 
 export const metadata: Metadata = {
   title: "Fragrant Paradise",
@@ -23,10 +24,11 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <main>
-            <Header />
-            <div className="max-w-5xl mx-auto p-4">{children}</div>
-          </main>
+          <Header />
+          <div className="max-w-5xl mx-auto p-4 flex flex-col min-h-screen">
+            {children}
+          </div>
+          <Footer />
         </ThemeProvider>
         <Toaster
           position="bottom-center"

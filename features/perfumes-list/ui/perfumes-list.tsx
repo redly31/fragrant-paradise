@@ -54,7 +54,7 @@ export default function PerfumesList<T extends Product>({
     <div>
       <h1 className="text-3xl font-bold mb-6">{title}</h1>
 
-      <div className="grid grid-cols-1 min-[450px]:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         <AnimatePresence mode="popLayout">
           {visibleItems.map((item, index) => (
             <motion.div

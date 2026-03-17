@@ -14,6 +14,7 @@ import {
 } from "@/shared/components/ui/dropdown-menu"
 
 const links = [
+  { href: "/home", label: "Главная" },
   { href: "/", label: "Каталог" },
   { href: "/cart", label: "Корзина" },
   { href: "/favorites", label: "Избранное" },

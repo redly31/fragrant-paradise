@@ -17,10 +17,10 @@ type PerfumeItemProps = {
 
 export default function PerfumeItem({ perfume, children }: PerfumeItemProps) {
   return (
-    <Card className="flex flex-col p-2 sm:p-4 gap-2 h-full">
+    <Card className="flex flex-col p-0 sm:p-4 gap-2 min-[450px]:h-full">
       <CardHeader className="p-0">
         <Link href={`${perfume.handle}`} className="relative block w-full">
-          <div className="relative aspect-3/4 w-full overflow-hidden rounded-md bg-secondary/10">
+          <div className="relative mx-auto flex items-center justify-center aspect-3/4 w-3/4 sm:w-full overflow-hidden rounded-md bg-secondary/10">
             <Image
               src={perfume.featuredImage.url}
               alt={perfume.title}
@@ -38,7 +38,7 @@ export default function PerfumeItem({ perfume, children }: PerfumeItemProps) {
           {perfume.vendor} {perfume.title}
         </CardTitle>
 
-        <span className="text-lg font-semibold mt-2">
+        <span className="text-base sm:text-lg font-semibold mt-2">
           {perfume.priceRange.minVariantPrice.amount}{" "}
           {perfume.priceRange.minVariantPrice.currencyCode}
         </span>
